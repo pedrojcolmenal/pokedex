@@ -8,26 +8,45 @@
     <link rel="stylesheet" href="pokedex.css">
 </head>
 <body>
-    <h1>Pokedex LaunchX</h1>
+    <header>
+        <h1>Pokedex LaunchX</h1>
+        <img src="images/pokemon-logo.png" alt="Pokemon Logo">
+    </header>
     <section class="container">
         
-        <div class="p1 pokedex">
+        <div class="poke pokedex">
+            <div class="upperButtons">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+
+            </div>
+            <img class="logo-pokedex" src="images/pokedex.png" alt="pokedex" width= "160px" height="40px"> 
             <div class="pimage-background">
                 <div class="pimage">
-
+                   <img id="pimage" class="" src="images/pokeball.png" alt="pokedex" width= "155px" height="130px"> 
+                   
                 </div>
             </div>
-            
-
+            <div class="lowerButtons">
+                <div class="circle5"></div>
+                <input type="text" name="pnameIn" id="pnameIn" placeholder="Pokémon">
+                <input type="button" id="button" name="button" onclick="pokemon()" value="Buscar" >
+                <img class="dpad" src="images/dpad.png" alt="dpad" width="90px" height="90px">  
+            </div>    
         </div>
-        <div class="p2 pokedex">
-            <input type="text" name="pname" id="pname" placeholder="Pokémon">
-            <input type="button" value="Buscar" id="button" name="button">
-
+        <div class="poke pokedex">
+            <div id="info" class="info" ></div>
+            <div id="pokemonMoves" class="pokemonMoves">
+                <p id="moves" ></p>
+            </div>
         </div>
     </section>
         
-
+<footer>
+    <script src="pokedex.js"></script>
+</footer>
 
 </body>
 </html>
