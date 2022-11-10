@@ -22,20 +22,20 @@ const pokemonData = (data) => {
     if(data!='error'){
         document.getElementById('pimage').src = data.sprites.front_default;
         //document.getElementById('pokemonName').innerHTML = '<p>Id: '+data.id +'<br> Nombre: ' + data.name + '</p>';
-        let pokemonData = '<p>Id: '+data.id +'<br> Nombre: ' + data.name + '<br>';
+        let pokemonData = '<p><b>Id</b>: #'+data.id +'<br><b>Nombre:</b> ' + data.name + '<br>';
         const typesName = data.types.map(item => item.type.name);
         //document.getElementById('pokemonType').innerHTML = '<p> Tipo: ' + typesName + '</p>';
-        pokemonData +=  'Tipo: ' + typesName + '<br>';
+        pokemonData +=  '<b>Tipo:</b> ' + typesName + '<br>';
 
-       const stats = data.stats.map(item => `${item.stat.name} ${item.base_stat}`);
-       pokemonData += "Estadísticas: <br>"
+       const stats = data.stats.map(item => `<b>${item.stat.name.toUpperCase()}:</b>  ${item.base_stat}`);
+       pokemonData += "<b>Estadísticas:</b> <br>"
         stats.forEach(element => {
             pokemonData += element+'<br>';
         }) 
-        document.getElementById('info').innerHTML= pokemonData + '</p>';
+        document.getElementById('description').innerHTML= pokemonData + '</p>';
 
-        const movesName = data.moves.map(item => item.move.name);
-        document.getElementById('moves').innerHTML='';
+        const movesName = data.abilities.map(item => item.ability.name);
+        document.getElementById('moves').innerHTML='<b>Habilidades:</b> <br> ';
         movesName.forEach(element => {
             document.getElementById('moves').innerHTML +=element+'<br>';
         }) 
